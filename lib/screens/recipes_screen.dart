@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/recipes_grid_view.dart';
 import '../api/mock_fooderlich_service.dart';
 
 class RecipesScreen extends StatelessWidget {
@@ -12,9 +13,7 @@ class RecipesScreen extends StatelessWidget {
       future: exploreService.getRecipes(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return const Center(
-            child: Text('Recipes Screen'),
-          );
+          return RecipesGridView(recipes: snapshot.data ?? []);
         } else {
           return const Center(
             child: CircularProgressIndicator(),
