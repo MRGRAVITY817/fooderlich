@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/components/components.dart';
-import 'package:fooderlich/models/post.dart';
+import 'components.dart';
+import '../models/post.dart';
 
 class FriendPostListView extends StatelessWidget {
   final List<Post> friendPosts;
